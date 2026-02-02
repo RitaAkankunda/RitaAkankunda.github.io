@@ -1,0 +1,180 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Rita Akankunda, a Computer Science student focused on backend systems and impactful software solutions." />
+    <title>Rita Akankunda | CS Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(theme);
+    </script>
+    <header class="header">
+      <div class="menu-btn-container">
+        <div class="container">
+          <button type="button" class="menu-btn">menu</button>
+        </div>
+      </div>
+
+      <nav class="nav hidden">
+        <ol class="nav-items">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#work">My Work</a></li>
+          <li class="nav-item"><a href="#blog">See Blog</a></li>
+          <li class="nav-item"><a href="#skills">My Skills</a></li>
+          <li class="nav-item">
+            <a href="#contact" data-focused="last-focused">Contact</a>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="container">
+        <div class="header-textbox">
+          <h1 class="h1">
+            <span>Hi, I'm Rita Akankunda</span>
+            <span>Computer Science Student</span>
+          </h1>
+
+          <p class="header-text">
+            Building robust backend systems and architecting software solutions 
+            to solve real-world campus and community challenges.
+          </p>
+
+          <div class="header-btns">
+            <a href="#contact" class="btn btn-cta">Hire me</a>
+            <a href="#work" class="btn btn-secondary">View my projects</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="work">
+  <div class="container">
+    <h2 class="h2" id="work">Selected Projects</h2>
+    <div class="work-boxes">
+      
+      <div class="work-box">
+        <div class="work-textbox">
+          <h3 class="h3">Dembe Driving School</h3>
+          <p class="work-text">
+            A modern, responsive website for a professional driving school in Uganda. Features a beautiful green-themed design with realistic vehicle animations and comprehensive course information.
+          </p>
+          <ol class="work-technologies">
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+          </ol>
+          <div class="work-links">
+            <a href="https://github.com/RitaAkankunda/dembedrivingschool.git" target="_blank" class="link">View Repository</a>
+          </div>
+        </div>
+        <picture class="work-img">
+          <img src="assets/images/work/dembe-driving-school.webp" alt="Dembe Driving School" />
+        </picture>
+      </div>
+
+      <div class="work-box">
+        <div class="work-textbox">
+          <h3 class="h3">Data & API Integration</h3>
+          <p class="work-text">
+            Focused on building clean, reusable code and integrating various data sources 
+            to streamline university-level administrative tasks.
+          </p>
+          <ol class="work-technologies">
+            <li>JavaScript</li>
+            <li>Git</li>
+            <li>CSS</li>
+          </ol>
+          <div class="work-links">
+            <a href="https://github.com/RitaAkankunda" target="_blank" class="link">Explore Code</a>
+          </div>
+        </div>
+        <picture class="work-img">
+          <img src="assets/images/work/agency-elevation.webp" alt="API structure" />
+        </picture>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="skills">
+  <div class="container">
+    <h2 class="h2" id="skills">My Toolkit</h2>
+    <div class="skills-imgs">
+      <img src="assets/images/skills/js.webp" alt="JavaScript" class="skills-img" loading="lazy" title="JavaScript">
+      <img src="assets/images/skills/typescript.webp" alt="TypeScript" class="skills-img" loading="lazy" title="TypeScript">
+      <img src="assets/images/skills/react.webp" alt="React" class="skills-img" loading="lazy" title="React">
+      <img src="assets/images/skills/html.webp" alt="HTML" class="skills-img" loading="lazy" title="HTML">
+      <img src="assets/images/skills/shell.webp" alt="CSS" class="skills-img" loading="lazy" title="CSS">
+      <img src="assets/images/skills/git.webp" alt="Git" class="skills-img" loading="lazy" title="Git">
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <h2 class="h2" id="contact">Send Message</h2>
+    <div class="contact-content">
+      <div class="contact-textbox">
+        <strong href="#" class="hire-alert">
+          <span class="indicator"></span>
+          Available for hire
+        </strong>
+        <p class="contact-text">
+          As a Computer Science student, I am passionate about building robust backend systems 
+          and solving real-world problems through code. I'm always eager to collaborate on 
+          projects that make an impact.
+        </p>
+        <p class="contact-text">
+          Feel free to reach out if you'd like to discuss potential opportunities or just 
+          want to connect!
+        </p>
+        <p class="signatures">Rita</p>
+      </div>
+      <form action="#" class="contact-form" netlify>
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required inputmode="email" />
+        </div>
+        <div class="form-field">
+          <label for="message">How can I help you?</label>
+          <textarea name="message" id="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-cta">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <nav>
+        <ol class="footer-links">
+          <li class="footer-link">
+            <a title="GitHub" href="https://github.com/RitaAkankunda" target="_blank">
+                <img src="assets/images/social-links/github.svg" alt="GitHub" />
+            </a>
+          </li>
+          <li class="footer-link">
+            <a title="Linkedin" href="https://www.linkedin.com/in/rita-akankunda-733563350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                <img src="assets/images/social-links/linkedin.svg" alt="Linkedin" />
+            </a>
+          </li>
+        </ol>
+      </nav>
+      <p class="footer-text">
+        &copy; 2026 - Developed by Rita Akankunda.
+      </p>
+    </div>
+  </div>
+</footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

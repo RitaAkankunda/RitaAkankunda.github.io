@@ -1,6 +1,6 @@
 # Rita Akankunda - Computer Science Portfolio
 
-🌐 **Live Portfolio:** [ritaakankunda.github.io](https://ritaakankunda.github.io)
+🌐 **Live Portfolio:** [rita-akankunda-portfolio.netlify.app](https://rita-akankunda-portfolio.netlify.app/)
 
 Welcome to my portfolio! This is a showcase of my work as a Computer Science student passionate about web development and building innovative solutions to real-world problems.
 
@@ -42,7 +42,7 @@ I'm always open to collaborating on projects that make an impact! Feel free to r
 
 - **GitHub:** [RitaAkankunda](https://github.com/RitaAkankunda)
 - **LinkedIn:** [Rita Akankunda](https://www.linkedin.com/in/rita-akankunda-733563350)
-- **Portfolio:** [ritaakankunda.github.io](https://ritaakankunda.github.io)
+- **Portfolio:** [rita-akankunda-portfolio.netlify.app](https://rita-akankunda-portfolio.netlify.app/)
 
 ---
 

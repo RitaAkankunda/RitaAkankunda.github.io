@@ -14,10 +14,7 @@ A modern, responsive website for a professional driving school in Uganda. Featur
 **Tech Stack:** React, TypeScript, Tailwind CSS  
 **Repository:** [View on GitHub](https://github.com/RitaAkankunda/dembedrivingschool)
 
-### 2. Data & API Integration
-Focused on building clean, reusable code and integrating various data sources to streamline administrative tasks.
 
-**Tech Stack:** JavaScript, Git, CSS
 
 ## My Toolkit
 

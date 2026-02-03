@@ -1,5 +1,7 @@
 # Rita Akankunda - Computer Science Portfolio
 
+🌐 **Live Portfolio:** [ritaakankunda.github.io](https://ritaakankunda.github.io)
+
 Welcome to my portfolio! This is a showcase of my work as a Computer Science student passionate about web development and building innovative solutions to real-world problems.
 
 ## About Me
@@ -28,9 +30,6 @@ A modern, responsive website for a professional driving school in Uganda. Featur
 - TypeScript
 - React
 - HTML & CSS
-- Node.js
-- Express
-- MongoDB
 - Git
 
 ## Blog

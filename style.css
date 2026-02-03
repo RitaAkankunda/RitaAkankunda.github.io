@@ -745,6 +745,27 @@ body.light .work-img {
   margin-block-end: var(--gutter-small);
 }
 
+.blog-post-full {
+  padding-block: var(--gutter-huge);
+}
+
+.blog-post-full article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--gutter-large);
+  background: var(--bg-color-secondary);
+  border-radius: var(--radius);
+}
+
+.blog-post-full .blog-date {
+  margin-block-end: var(--gutter-medium);
+}
+
+.blog-post-full p {
+  margin-block-end: var(--gutter-medium);
+  line-height: 1.6;
+}
+
 body.dark .work-links img {
   filter: invert(1);
 }

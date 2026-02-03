@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Campus Hustle: Building for Students - Rita Akankunda's Blog" />
+    <title>Campus Hustle: Building for Students | Rita Akankunda</title>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(theme);
+    </script>
+    <header class="header">
+      <div class="menu-btn-container">
+        <div class="container">
+          <button type="button" class="menu-btn">menu</button>
+        </div>
+      </div>
+
+      <nav class="nav hidden">
+        <ol class="nav-items">
+          <li class="nav-item"><a href="../index.html">Home</a></li>
+          <li class="nav-item"><a href="../index.html#work">My Work</a></li>
+          <li class="nav-item"><a href="../index.html#blog">See Blog</a></li>
+          <li class="nav-item"><a href="../index.html#skills">My Skills</a></li>
+          <li class="nav-item">
+            <a href="../index.html#contact" data-focused="last-focused">Contact</a>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="container">
+        <div class="header-textbox">
+          <h1 class="h1">
+            <span>Campus Hustle: Building for Students</span>
+          </h1>
+          <p class="header-text">
+            How I developed a platform to help students find opportunities.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="blog-post-full">
+      <div class="container">
+        <article>
+          <p class="blog-date">December 20, 2025</p>
+          <p>
+            Campus Hustle started as a solution to a common problem: students struggling to find part-time jobs and internships on campus. As a student myself, I saw the need for a centralized platform.
+          </p>
+          <p>
+            Using React for the frontend and Node.js with Express and MongoDB for the backend, I built a full-stack application that connects students with opportunities. Features include job postings, application tracking, and user profiles.
+          </p>
+          <p>
+            The project taught me valuable lessons in user-centered design, database management, and deploying applications. It's been rewarding to see how it helps fellow students navigate their careers.
+          </p>
+          <a href="../index.html#blog" class="btn btn-secondary">← Back to Blog</a>
+        </article>
+      </div>
+    </main>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>

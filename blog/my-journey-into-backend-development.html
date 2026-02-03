@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Journey into Backend Development - Rita Akankunda's Blog" />
+    <title>My Journey into Backend Development | Rita Akankunda</title>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(theme);
+    </script>
+    <header class="header">
+      <div class="menu-btn-container">
+        <div class="container">
+          <button type="button" class="menu-btn">menu</button>
+        </div>
+      </div>
+
+      <nav class="nav hidden">
+        <ol class="nav-items">
+          <li class="nav-item"><a href="../index.html">Home</a></li>
+          <li class="nav-item"><a href="../index.html#work">My Work</a></li>
+          <li class="nav-item"><a href="../index.html#blog">See Blog</a></li>
+          <li class="nav-item"><a href="../index.html#skills">My Skills</a></li>
+          <li class="nav-item">
+            <a href="../index.html#contact" data-focused="last-focused">Contact</a>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="container">
+        <div class="header-textbox">
+          <h1 class="h1">
+            <span>My Journey into Backend Development</span>
+          </h1>
+          <p class="header-text">
+            Exploring the world of server-side programming and building robust systems.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="blog-post-full">
+      <div class="container">
+        <article>
+          <p class="blog-date">February 3, 2026</p>
+          <p>
+            As a Computer Science student, my journey into backend development began with curiosity about what happens behind the scenes of web applications. Frontend development was exciting, but I realized the real magic lies in the server-side logic that powers everything.
+          </p>
+          <p>
+            Starting with Node.js and Express, I learned how to build RESTful APIs that handle data efficiently. MongoDB became my go-to database for its flexibility in storing complex data structures. Through projects like Campus Hustle, I've applied these skills to create meaningful solutions for real-world problems.
+          </p>
+          <p>
+            Backend development has taught me the importance of security, scalability, and clean architecture. I'm passionate about building systems that are not just functional, but also maintainable and secure.
+          </p>
+          <a href="../index.html#blog" class="btn btn-secondary">← Back to Blog</a>
+        </article>
+      </div>
+    </main>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>

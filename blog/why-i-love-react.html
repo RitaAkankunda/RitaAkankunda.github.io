@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Why I Love React - Rita Akankunda's Blog" />
+    <title>Why I Love React | Rita Akankunda</title>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(theme);
+    </script>
+    <header class="header">
+      <div class="menu-btn-container">
+        <div class="container">
+          <button type="button" class="menu-btn">menu</button>
+        </div>
+      </div>
+
+      <nav class="nav hidden">
+        <ol class="nav-items">
+          <li class="nav-item"><a href="../index.html">Home</a></li>
+          <li class="nav-item"><a href="../index.html#work">My Work</a></li>
+          <li class="nav-item"><a href="../index.html#blog">See Blog</a></li>
+          <li class="nav-item"><a href="../index.html#skills">My Skills</a></li>
+          <li class="nav-item">
+            <a href="../index.html#contact" data-focused="last-focused">Contact</a>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="container">
+        <div class="header-textbox">
+          <h1 class="h1">
+            <span>Why I Love React</span>
+          </h1>
+          <p class="header-text">
+            A deep dive into React's component-based architecture.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="blog-post-full">
+      <div class="container">
+        <article>
+          <p class="blog-date">January 15, 2026</p>
+          <p>
+            React has revolutionized the way I think about building user interfaces. Its component-based architecture allows me to break down complex UIs into reusable, manageable pieces.
+          </p>
+          <p>
+            The virtual DOM and efficient rendering make React applications fast and responsive. Hooks like useState and useEffect have simplified state management, making it easier to create interactive features without class components.
+          </p>
+          <p>
+            Whether it's building a simple portfolio or a complex application like Campus Hustle, React's ecosystem of libraries and tools makes development enjoyable and productive.
+          </p>
+          <a href="../index.html#blog" class="btn btn-secondary">← Back to Blog</a>
+        </article>
+      </div>
+    </main>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>

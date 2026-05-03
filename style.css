@@ -122,6 +122,106 @@ textarea {
 }
 
 /* --------------------------------- */
+/* ----- Animations -----*/
+/* --------------------------------- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 94, 153, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 94, 153, 0.8);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+/* Filter button glow effect */
+.filter-btn:hover {
+  box-shadow: 0 0 15px currentColor;
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Skills icon rotation animation */
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.skill-icon:hover {
+  animation: rotateIcon 0.6s ease-in-out;
+}
+
+/* --------------------------------- */
 /* ----- Typography -----*/
 /* --------------------------------- */
 
@@ -243,7 +343,8 @@ h3,
   transform: translateX(-100%);
 }
 
-.transform {
+/* Old animation class - only apply to work images */
+.work-img.transform {
   transform: translateY(6rem);
   opacity: 0;
 }
@@ -288,12 +389,14 @@ h3,
 
 body.dark .btn-cta:hover,
 body.dark .btn-cta:focus {
-  box-shadow: #ffffff40 0 0 0 var(--gutter-nano);
+  box-shadow: #ffffff40 0 0 0 var(--gutter-nano), 0 0 20px rgba(255, 94, 153, 0.5);
+  animation: glow 2s ease-in-out infinite;
 }
 
 body.light .btn-cta:hover,
 body.light .btn-cta:focus {
-  box-shadow: #07070733 0 0 0 var(--gutter-nano);
+  box-shadow: #07070733 0 0 0 var(--gutter-nano), 0 0 20px rgba(255, 94, 153, 0.5);
+  animation: glow 2s ease-in-out infinite;
 }
 
 .btn-secondary {
@@ -427,8 +530,7 @@ main {
   min-block-size: 100vh;
   position: fixed;
   width: 100%;
-  background-color: #ff5e99;
-  background-image: var(--gradient-brand);
+  background: linear-gradient(90deg, #1a0a0f 0%, #4a1a2e 40%, #8b2e3e 100%);
   transition: 450ms var(--easing);
   z-index: 3;
 }
@@ -473,7 +575,7 @@ main {
 /* --------------------------------- */
 
 .header {
-  min-block-size: calc(100vh + var(--radius));
+  min-block-size: 85vh;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -482,7 +584,7 @@ main {
 }
 
 body.dark .header {
-  background-image: linear-gradient(#0000008b, #000000e6),
+  background-image: linear-gradient(rgba(30, 41, 59, 0.85), rgba(30, 41, 59, 0.9)),
     url("assets/images/hero-bg.webp");
 }
 
@@ -680,14 +782,10 @@ body.light .logo {
 /* ----- Work -----*/
 /* --------------------------------- */
 
-.work-boxes {
-  padding-block-start: var(--gutter-x-large);
-}
-
+/* Hide old work box styles - using Tailwind grid instead */
+.work-boxes,
 .work-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: none !important;
 }
 
 @media (max-width: 1045px) {

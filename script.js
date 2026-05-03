@@ -1,3 +1,86 @@
+// Project Filter Functionality - Define FIRST
+window.filterProjects = function(filter) {
+  console.log('Filter clicked:', filter);
+  
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('[data-status]');
+  const noProjectsMessage = document.getElementById('no-projects-message');
+  
+  let visibleCount = 0;
+  
+  // Remove active class from all buttons
+  buttons.forEach(btn => btn.classList.remove('active'));
+  
+  // Add active to the clicked button
+  const clickedBtn = document.querySelector(`[data-filter="${filter}"]`);
+  if (clickedBtn) {
+    clickedBtn.classList.add('active');
+  }
+  
+  // Reset all button colors
+  buttons.forEach(btn => {
+    btn.style.borderColor = '';
+    btn.style.color = '';
+  });
+  
+  // Apply colors to active button
+  if (filter === 'completed') {
+    if (clickedBtn) clickedBtn.style.borderColor = '#22c55e';
+    if (clickedBtn) clickedBtn.style.color = '#22c55e';
+  } else if (filter === 'ongoing') {
+    if (clickedBtn) clickedBtn.style.borderColor = '#3b82f6';
+    if (clickedBtn) clickedBtn.style.color = '#3b82f6';
+  } else if (filter === 'all') {
+    if (clickedBtn) clickedBtn.style.borderColor = '#9ca3af';
+    if (clickedBtn) clickedBtn.style.color = '#d1d5db';
+  }
+  
+  // Filter cards
+  cards.forEach(card => {
+    const cardStatus = card.getAttribute('data-status');
+    if (filter === 'all' || cardStatus === filter) {
+      card.style.display = 'block';
+      visibleCount++;
+      console.log(`✓ Showing card with status: ${cardStatus}`);
+    } else {
+      card.style.display = 'none';
+      console.log(`✗ Hiding card with status: ${cardStatus}`);
+    }
+  });
+  
+  // Show/hide "no projects" message
+  if (visibleCount === 0) {
+    noProjectsMessage.classList.remove('hidden');
+    console.log('📭 No projects found - showing message');
+  } else {
+    noProjectsMessage.classList.add('hidden');
+    console.log(`✅ Found ${visibleCount} projects - hiding message`);
+  }
+};
+
+// Scroll animations - Fade in elements as they scroll into view
+function initScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in-up');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections, headings, and cards
+  document.querySelectorAll('section, .project-card, article, .blog').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+}
+
 const nav = document.querySelector(".nav");
 const navMenu = document.querySelector(".nav-items");
 const btnToggleNav = document.querySelector(".menu-btn");
@@ -111,4 +194,27 @@ logosWrappers.forEach(async (logoWrapper, i) => {
   }, 5600);
 });
 
+// Add fadeIn animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+document.head.appendChild(style);
+
 yearEl.textContent = new Date().getFullYear();
+
+// Initialize scroll animations
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initScrollAnimations);
+} else {
+  initScrollAnimations();
+}

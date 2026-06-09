@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://akankundarita.me/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://akankundarita.me/blog/my-journey-into-web-development.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://akankundarita.me/blog/why-i-love-tech.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://akankundarita.me/blog/campus-hustle-building-for-students.html</loc>
+    <priority>0.7</priority>
+  </url>
+</urlset>

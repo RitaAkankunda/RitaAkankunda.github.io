@@ -1,7 +1,5 @@
 // Project Filter Functionality - Define FIRST
 window.filterProjects = function(filter) {
-  console.log('Filter clicked:', filter);
-  
   const buttons = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('[data-status]');
   const noProjectsMessage = document.getElementById('no-projects-message');
@@ -41,20 +39,16 @@ window.filterProjects = function(filter) {
     if (filter === 'all' || cardStatus === filter) {
       card.style.display = 'block';
       visibleCount++;
-      console.log(`✓ Showing card with status: ${cardStatus}`);
     } else {
       card.style.display = 'none';
-      console.log(`✗ Hiding card with status: ${cardStatus}`);
     }
   });
   
   // Show/hide "no projects" message
-  if (visibleCount === 0) {
+  if (noProjectsMessage && visibleCount === 0) {
     noProjectsMessage.classList.remove('hidden');
-    console.log('📭 No projects found - showing message');
-  } else {
+  } else if (noProjectsMessage) {
     noProjectsMessage.classList.add('hidden');
-    console.log(`✅ Found ${visibleCount} projects - hiding message`);
   }
 };
 
@@ -86,7 +80,6 @@ const navMenu = document.querySelector(".nav-items");
 const btnToggleNav = document.querySelector(".menu-btn");
 const workEls = document.querySelectorAll(".work-box");
 const workImgs = document.querySelectorAll(".work-img");
-const mainEl = document.querySelector("main");
 const yearEl = document.querySelector(".footer-text span");
 
 const toggleNav = () => {
@@ -146,22 +139,24 @@ workEls.forEach((workEl) => {
 const switchThemeEl = document.querySelector('input[type="checkbox"]');
 const storedTheme = localStorage.getItem("theme");
 
-switchThemeEl.checked = storedTheme === "dark" || storedTheme === null;
+if (switchThemeEl) {
+  switchThemeEl.checked = storedTheme === "dark" || storedTheme === null;
 
-switchThemeEl.addEventListener("click", () => {
-  const isChecked = switchThemeEl.checked;
+  switchThemeEl.addEventListener("click", () => {
+    const isChecked = switchThemeEl.checked;
 
-  if (!isChecked) {
-    document.body.classList.remove("dark");
-    document.body.classList.add("light");
-    localStorage.setItem("theme", "light");
-    switchThemeEl.checked = false;
-  } else {
-    document.body.classList.add("dark");
-    document.body.classList.remove("light");
-    localStorage.setItem("theme", "dark");
-  }
-});
+    if (!isChecked) {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+      localStorage.setItem("theme", "light");
+      switchThemeEl.checked = false;
+    } else {
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+    }
+  });
+}
 
 // Trap the tab when menu is opened
 
@@ -210,7 +205,9 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-yearEl.textContent = new Date().getFullYear();
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
 // Initialize scroll animations
 if (document.readyState === 'loading') {

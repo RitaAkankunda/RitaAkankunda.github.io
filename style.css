@@ -107,6 +107,16 @@ body {
   overflow-x: hidden;
 }
 
+body.dark {
+  background-image: linear-gradient(180deg, #080506 0%, #16090d 32%, #2a0d16 68%, #12070b 100%);
+  background-attachment: scroll;
+}
+
+body.light {
+  background-image: linear-gradient(180deg, #fffafa 0%, #fff1f4 46%, #f8e2e8 100%);
+  background-attachment: scroll;
+}
+
 /* Improve media defaults */
 
 picture,
@@ -182,6 +192,15 @@ textarea {
   }
   50% {
     transform: scale(1.05);
+  }
+}
+
+@keyframes roleMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -576,7 +595,8 @@ main {
 
 .header {
   min-block-size: 85vh;
-  background-attachment: fixed;
+  background-attachment: scroll;
+  background-color: transparent !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -584,13 +604,208 @@ main {
 }
 
 body.dark .header {
-  background-image: linear-gradient(rgba(30, 41, 59, 0.85), rgba(30, 41, 59, 0.9)),
-    url("assets/images/hero-bg.webp");
+  background-image: none;
 }
 
 body.light .header {
-  background-image: linear-gradient(#ffffffa2, #ffffffe6),
-    url("assets/images/hero-bg-light.webp");
+  background-image: none;
+}
+
+.work,
+.blog,
+.skills,
+.contact {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+body.light .work,
+body.light .blog,
+body.light .skills,
+body.light .contact {
+  background: transparent !important;
+}
+
+.role-strip {
+  overflow: hidden;
+  border-block: 1px solid rgba(128, 23, 42, 0.24);
+  background: transparent;
+}
+
+.role-track {
+  display: flex;
+  inline-size: max-content;
+  gap: clamp(1.6rem, 4vw, 3.5rem);
+  padding-block: clamp(1rem, 2vw, 1.35rem);
+  white-space: nowrap;
+  animation: roleMarquee 28s linear infinite;
+}
+
+.role-track span {
+  color: #f6dbe3;
+  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.role-track span::after {
+  content: "/";
+  margin-inline-start: clamp(1.6rem, 4vw, 3.5rem);
+  color: rgba(183, 42, 70, 0.74);
+}
+
+footer {
+  background: transparent !important;
+}
+
+body.light .role-strip {
+  background: transparent;
+}
+
+body.light .role-track span {
+  color: #be185d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .role-track {
+    animation: none;
+  }
+}
+
+/* Project showcase inspired by compact editorial portfolio cards */
+.work .container {
+  max-inline-size: 1500px;
+}
+
+.work .grid {
+  align-items: start;
+  gap: clamp(1.25rem, 2vw, 2rem) !important;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
+}
+
+.project-card {
+  min-block-size: 100%;
+  border: 1px solid rgba(255, 111, 171, 0.12) !important;
+  border-radius: 8px !important;
+  background: rgba(8, 7, 9, 0.82) !important;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
+  transform: none !important;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease !important;
+}
+
+.project-card:hover {
+  border-color: rgba(255, 111, 171, 0.38) !important;
+  box-shadow: 0 28px 58px rgba(0, 0, 0, 0.32);
+  transform: translateY(-8px) !important;
+}
+
+.project-card > .relative {
+  block-size: 11rem !important;
+  border-radius: 8px 8px 0 0;
+  background: #f8f7f4 !important;
+}
+
+.project-card > .relative img {
+  object-fit: cover;
+  transition: transform 260ms ease;
+}
+
+.project-card:hover > .relative img {
+  transform: scale(1.04) !important;
+}
+
+.project-card > .p-6 {
+  display: flex;
+  min-block-size: 21rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.35rem 1.2rem 1.45rem !important;
+  text-align: center;
+}
+
+.project-card h3 {
+  margin-block-end: 0.8rem !important;
+  color: #fff7fb !important;
+  font-size: 1.05rem !important;
+  line-height: 1.2;
+}
+
+.project-card p {
+  color: #f2dce8 !important;
+  font-size: 0.78rem !important;
+  font-weight: 600;
+  line-height: 1.65;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.project-card .absolute span {
+  border: 1px solid currentColor;
+  border-radius: 999px !important;
+  background: rgba(3, 7, 18, 0.72) !important;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.26);
+  letter-spacing: 0;
+}
+
+.project-card[data-status="completed"] .absolute span:first-child {
+  color: #22c55e !important;
+}
+
+.project-card[data-status="ongoing"] .absolute span:first-child {
+  color: #fb923c !important;
+}
+
+.project-card .flex.flex-wrap.gap-2.mb-4 {
+  justify-content: center;
+  margin-block: auto 1.1rem !important;
+  padding-block-start: 1.2rem;
+}
+
+.project-card .flex.flex-wrap.gap-2.mb-4::before {
+  content: "Technologies Used";
+  flex-basis: 100%;
+  margin-block-end: 0.6rem;
+  color: #f9d9e8;
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-card .flex.flex-wrap.gap-2.mb-4 span {
+  display: inline-grid;
+  min-inline-size: 2.2rem;
+  min-block-size: 2.2rem;
+  place-items: center;
+  border: 1px solid rgba(255, 111, 171, 0.18);
+  border-radius: 999px !important;
+  background: #fff7ee !important;
+  color: #181116 !important;
+  font-size: 0.62rem !important;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.project-card > .p-6 > .flex.gap-4:last-child {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.85rem !important;
+}
+
+.project-card > .p-6 > .flex.gap-4:last-child a,
+.project-card > .p-6 > .flex.gap-4:last-child span {
+  font-size: 0.76rem !important;
+}
+
+@media (max-width: 640px) {
+  .work .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-card > .p-6 {
+    min-block-size: auto;
+  }
 }
 
 .header-hero {
@@ -666,6 +881,10 @@ body.light .header {
 }
 
 @media (max-width: 845px) {
+  .header {
+    padding-block-start: 7rem;
+  }
+
   .header-text {
     max-inline-size: 585px;
   }
@@ -675,7 +894,7 @@ body.light .header {
     top: auto;
     transform: none;
     position: relative;
-    padding-block: var(--gutter-large);
+    padding-block: var(--gutter-large) calc(var(--gutter-large) + 1rem);
   }
 
   .header-photo-card {

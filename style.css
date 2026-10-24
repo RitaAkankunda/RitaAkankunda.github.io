@@ -631,47 +631,12 @@ body.light .contact {
   background: transparent !important;
 }
 
-.role-strip {
-  display: none !important;
-}
-
-.role-track {
-  display: flex;
-  inline-size: max-content;
-  gap: clamp(1.6rem, 4vw, 3.5rem);
-  padding-block: clamp(1rem, 2vw, 1.35rem);
-  white-space: nowrap;
-  animation: roleMarquee 28s linear infinite;
-}
-
-.role-track span {
-  color: #f6dbe3;
-  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.role-track span::after {
-  content: "/";
-  margin-inline-start: clamp(1.6rem, 4vw, 3.5rem);
-  color: rgba(183, 42, 70, 0.74);
-}
-
 footer {
   background: transparent !important;
 }
 
-body.light .role-strip {
-  background: transparent;
-}
-
-body.light .role-track span {
-  color: #be185d;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .role-track {
+  .hero-orb {
     animation: none;
   }
 }

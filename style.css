@@ -632,7 +632,7 @@ body.light .contact {
 }
 
 .role-strip {
-  display: none;
+  display: none !important;
 }
 
 .role-track {
@@ -1710,27 +1710,35 @@ body.dark .work-links img {
 
 @media (min-width: 846px) {
   .header-hero {
-    width: 100vw;
-    margin-inline-start: calc(50% - 50vw);
-    padding-inline: 0;
+    width: 100%;
+    margin-inline: 0;
+    padding-block: 3rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
     min-height: 72vh;
-    display: block;
+    display: grid;
   }
 
   .header-photo-card {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: min(50vw, 460px);
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: end !important;
+    width: min(100%, 420px);
     margin: 0;
-    transform: translateY(-50%) !important;
+    transform: none !important;
     animation: none !important;
   }
 
   .header-textbox {
-    width: 50vw;
-    margin-inline-start: 50vw;
-    padding-inline: 1.5rem 2rem;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: auto;
+    margin-inline-start: 0;
+    padding-inline: 0;
     max-width: 720px;
   }
 }

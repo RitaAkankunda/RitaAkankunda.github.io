@@ -1713,8 +1713,8 @@ body.dark .work-links img {
     width: 100%;
     margin-inline: 0;
     padding-block: 3rem;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    gap: clamp(2rem, 5vw, 5rem);
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr) !important;
+    gap: clamp(1.5rem, 3vw, 3.5rem);
     align-items: center;
     min-height: 72vh;
     display: grid;
@@ -1739,7 +1739,7 @@ body.dark .work-links img {
     width: auto;
     margin-inline-start: 0;
     padding-inline: 0;
-    max-width: 720px;
+    max-width: 780px;
   }
 }
 

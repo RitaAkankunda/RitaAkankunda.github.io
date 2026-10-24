@@ -905,8 +905,15 @@ body.light .role-track span {
   }
 
   .header-photo-card {
+    grid-column: 1;
+    grid-row: 1;
     justify-self: start;
     max-inline-size: 440px;
+  }
+
+  .header-textbox {
+    grid-column: 1;
+    grid-row: 2;
   }
 }
 
@@ -1489,15 +1496,79 @@ body.dark .work-links img {
   pointer-events: none;
 }
 
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.hero-orb {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  filter: blur(1px);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  animation: hero-float 10s ease-in-out infinite alternate;
+}
+
+.hero-orb-pink {
+  top: 14%;
+  left: 8%;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, rgba(255, 55, 150, 0.48), transparent 68%);
+}
+
+.hero-orb-cyan {
+  right: 12%;
+  bottom: 8%;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, rgba(0, 224, 255, 0.3), transparent 68%);
+  animation-delay: -3s;
+}
+
+.hero-orb-purple {
+  top: 4%;
+  right: 32%;
+  width: 10rem;
+  height: 10rem;
+  background: radial-gradient(circle, rgba(157, 78, 255, 0.28), transparent 68%);
+  animation-delay: -6s;
+}
+
+@keyframes hero-float {
+  from {
+    transform: translate3d(-18px, 10px, 0) scale(0.94);
+  }
+  to {
+    transform: translate3d(22px, -18px, 0) scale(1.08);
+  }
+}
+
 .header .container {
   position: relative;
   z-index: 2;
+}
+
 .header-hero {
   position: relative;
   top: auto;
   transform: none;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
   gap: var(--gutter-x-large);
   align-items: center;
   min-height: auto;
@@ -1506,6 +1577,31 @@ body.dark .work-links img {
 
 .header-textbox {
   z-index: 2;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.header-photo-card {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  margin-inline-start: 0;
+  width: min(100%, 470px);
+  max-inline-size: 470px;
+  aspect-ratio: 4 / 5;
+  padding: 0.75rem;
+  border-color: rgba(255, 94, 153, 0.28);
+  box-shadow: 0 0 0 1px rgba(0, 224, 255, 0.08),
+    0 24px 80px rgba(255, 45, 140, 0.2);
+}
+
+.header-photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  pointer-events: none;
 }
 
 /* Welcome badge styling */
@@ -1614,6 +1710,24 @@ body.dark .work-links img {
   }
 }
 
+@media (min-width: 846px) {
+  .header-hero {
+    grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.15fr) !important;
+  }
+
+  .header-photo-card {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    margin-inline: 0 auto !important;
+  }
+
+  .header-textbox {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+}
+
 @media (max-width: 640px) {
   .h1 {
     font-size: 2rem;
@@ -1621,6 +1735,20 @@ body.dark .work-links img {
   
   .header-text {
     font-size: 1rem;
+  }
+
+  .hero-orb-pink {
+    left: -7rem;
+  }
+
+  .hero-orb-cyan {
+    right: -9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb {
+    animation: none;
   }
 }
 

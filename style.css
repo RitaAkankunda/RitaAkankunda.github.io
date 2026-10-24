@@ -1712,19 +1712,28 @@ body.dark .work-links img {
 
 @media (min-width: 846px) {
   .header-hero {
-    grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.15fr) !important;
+    width: 100vw;
+    margin-inline-start: calc(50% - 50vw);
+    padding-inline: 0;
+    min-height: 72vh;
+    display: block;
   }
 
   .header-photo-card {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-    justify-self: start !important;
-    margin-inline: 0 auto !important;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: min(50vw, 460px);
+    margin: 0;
+    transform: translateY(-50%) !important;
+    animation: none !important;
   }
 
   .header-textbox {
-    grid-column: 2 !important;
-    grid-row: 1 !important;
+    width: 50vw;
+    margin-inline-start: 50vw;
+    padding-inline: clamp(1.5rem, 5vw, 6rem);
+    max-width: 720px;
   }
 }
 

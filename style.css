@@ -632,9 +632,7 @@ body.light .contact {
 }
 
 .role-strip {
-  overflow: hidden;
-  border-block: 1px solid rgba(128, 23, 42, 0.24);
-  background: transparent;
+  display: none;
 }
 
 .role-track {
@@ -1732,7 +1730,7 @@ body.dark .work-links img {
   .header-textbox {
     width: 50vw;
     margin-inline-start: 50vw;
-    padding-inline: clamp(1.5rem, 5vw, 6rem);
+    padding-inline: 1.5rem 2rem;
     max-width: 720px;
   }
 }

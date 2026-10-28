@@ -65,23 +65,26 @@
       document.body.classList.add(theme);
     </script>
     <header class="header bg-slate-900">
-      <div class="menu-btn-container sticky top-0 z-50 border-b border-slate-800 backdrop-blur-sm bg-slate-900/95">
-        <div class="container flex items-center justify-between">
-          <div class="flex gap-2">
-            <div class="hidden md:flex gap-2">
-              <a href="#work" class="text-sm text-gray-300 hover:text-brand transition-colors px-3 py-2">Work</a>
-              <a href="#about" class="text-sm text-gray-300 hover:text-brand transition-colors px-3 py-2">About</a>
-              <a href="#blog" class="text-sm text-gray-300 hover:text-brand transition-colors px-3 py-2">Blog</a>
-              <a href="#skills" class="text-sm text-gray-300 hover:text-brand transition-colors px-3 py-2">Skills</a>
-            </div>
-          </div>
-          <div>
-            <button type="button" class="menu-btn md:hidden">menu</button>
-          </div>
+      <div class="menu-btn-container">
+        <div class="container site-navbar">
+          <a class="site-brand" href="#" aria-label="Rita Akankunda — home">
+            <span class="site-brand-mark" aria-hidden="true">R.</span>
+            <span class="site-brand-name">Rita Akankunda</span>
+          </a>
+
+          <nav class="desktop-nav" aria-label="Main navigation">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#blog">Blog</a>
+            <a href="#skills">Skills</a>
+          </nav>
+
+          <a class="nav-contact" href="#contact">Let's Talk <span aria-hidden="true">↗</span></a>
+          <button type="button" class="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-navigation">Menu</button>
         </div>
       </div>
 
-      <nav class="nav hidden">
+      <nav class="nav hidden" id="mobile-navigation" aria-label="Mobile navigation">
         <ol class="nav-items">
           <li class="nav-item"><a href="#">Home</a></li>
           <li class="nav-item"><a href="#work">My Work</a></li>
@@ -104,18 +107,18 @@
         <div class="header-hero">
           <div class="header-textbox">
             <!-- Social Links at Top -->
-            <div class="flex gap-3 mb-8">
-              <a title="GitHub" aria-label="GitHub profile" href="https://github.com/RitaAkankunda" target="_blank" class="p-3 bg-slate-700 rounded-full hover:bg-brand hover:scale-110 transition-all duration-300">
+            <div class="hero-socials flex gap-3 mb-8">
+              <a title="GitHub" aria-label="GitHub profile" href="https://github.com/RitaAkankunda" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-700 rounded-full hover:bg-brand hover:scale-110 transition-all duration-300">
                 <img src="assets/images/social-links/github.svg" alt="GitHub" class="w-5 h-5" />
               </a>
-              <a title="LinkedIn" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/rita-akankunda-733563350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="p-3 bg-slate-700 rounded-full hover:bg-blue-600 hover:scale-110 transition-all duration-300">
+              <a title="LinkedIn" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/rita-akankunda-733563350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-700 rounded-full hover:bg-blue-600 hover:scale-110 transition-all duration-300">
                 <img src="assets/images/social-links/linkedin.svg" alt="LinkedIn" class="w-5 h-5" />
               </a>
               <a title="Email" aria-label="Email Rita" href="mailto:akankundarita04@gmail.com" class="p-3 bg-slate-700 rounded-full hover:bg-red-600 hover:scale-110 transition-all duration-300">
                 <img src="assets/images/social-links/mail.svg" alt="Email" class="w-5 h-5" />
               </a>
             </div>
-            <div class="mb-4 inline-block px-4 py-2 bg-brand/10 rounded-full border border-brand/30">
+            <div class="hero-welcome mb-4 inline-block px-4 py-2 bg-brand/10 rounded-full border border-brand/30">
               <span class="text-brand text-sm font-semibold">Welcome to my digital space ✨</span>
             </div>
             <h1 class="h1">
@@ -134,7 +137,7 @@
           </div>
           <div class="header-photo-card">
             <div class="header-photo-glow"></div>
-            <img src="assets/images/rita-headshot.jpeg" alt="Portrait of Rita Akankunda" class="header-photo" />
+            <img src="assets/images/rita-headshot.jpeg" alt="Portrait of Rita Akankunda" class="header-photo" width="380" height="475" fetchpriority="high" />
           </div>
         </div>
       </div>
@@ -190,8 +193,8 @@
                 <span class="px-3 py-1 bg-slate-600 text-slate-200 text-xs rounded-full">Tailwind CSS</span>
               </div>
               <div class="flex gap-4">
-                <a href="https://github.com/RitaAkankunda/dembedrivingschool.git" target="_blank" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
-                <a href="https://ritaakankunda.github.io/dembedrivingschool/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors">Live Demo →</a>
+                <a href="https://github.com/RitaAkankunda/dembedrivingschool.git" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
+                <a href="https://ritaakankunda.github.io/dembedrivingschool/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors">Live Demo →</a>
               </div>
             </div>
           </div>
@@ -217,8 +220,8 @@
                 <span class="px-3 py-1 bg-slate-600 text-slate-200 text-xs rounded-full">MongoDB</span>
               </div>
               <div class="flex gap-4">
-                <a href="https://github.com/RitaAkankunda/campus-hustle" target="_blank" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
-                <a href="https://campus-hustle.netlify.app/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors">Live Demo →</a>
+                <a href="https://github.com/RitaAkankunda/campus-hustle" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
+                <a href="https://campus-hustle.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors">Live Demo →</a>
               </div>
             </div>
           </div>
@@ -244,8 +247,8 @@
                 <span class="px-3 py-1 bg-slate-600 text-slate-200 text-xs rounded-full">Express</span>
               </div>
               <div class="flex gap-4">
-                <a href="https://github.com/RitaAkankunda/fastnet" target="_blank" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
-                <a href="https://fast-net-routing.netlify.app" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors">Live Demo →</a>
+                <a href="https://github.com/RitaAkankunda/fastnet" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
+                <a href="https://fast-net-routing.netlify.app" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors">Live Demo →</a>
               </div>
             </div>
           </div>
@@ -271,8 +274,8 @@
                 <span class="px-3 py-1 bg-slate-600 text-slate-200 text-xs rounded-full">JavaScript</span>
               </div>
               <div class="flex gap-4">
-                <a href="https://github.com/RitaAkankunda/sofari_hair_studio" target="_blank" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
-                <a href="https://ritaakankunda.github.io/sofari_hair_studio/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors">Live Demo →</a>
+                <a href="https://github.com/RitaAkankunda/sofari_hair_studio" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
+                <a href="https://ritaakankunda.github.io/sofari_hair_studio/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors">Live Demo →</a>
               </div>
             </div>
           </div>
@@ -297,15 +300,15 @@
                 <span class="px-3 py-1 bg-slate-600 text-slate-200 text-xs rounded-full">Mobile</span>
               </div>
               <div class="flex gap-4">
-                <a href="https://github.com/RitaAkankunda/LEXUG.git" target="_blank" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
+                <a href="https://github.com/RitaAkankunda/LEXUG.git" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
                 <span class="text-blue-400 text-sm font-semibold opacity-50 cursor-not-allowed">In Development</span>
               </div>
             </div>
           </div>
 
           <!-- Project 6 - BursarPro -->
-          <div class="project-card group bg-slate-700 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 hover:scale-105 cursor-pointer hover:border-2 hover:border-brand" data-status="ongoing">
-            <div class="relative h-48 bg-gray-800 overflow-hidden">
+          <div class="project-card project-card--text-only group bg-slate-700 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 hover:scale-105 cursor-pointer hover:border-2 hover:border-brand" data-status="ongoing">
+            <div class="project-text-cover relative h-48 overflow-hidden"><span class="project-cover-label">In development</span>
               <div class="absolute top-4 right-4">
                 <span class="inline-block px-4 py-1 rounded-full text-xs font-bold bg-blue-500 text-white animate-pulse">
                   ⚡ ONGOING
@@ -323,15 +326,15 @@
                 <span class="px-3 py-1 bg-slate-600 text-slate-200 text-xs rounded-full">MongoDB</span>
               </div>
               <div class="flex gap-4">
-                <a href="https://github.com/RitaAkankunda/bursarpro.git" target="_blank" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
+                <a href="https://github.com/RitaAkankunda/bursarpro.git" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
                 <span class="text-blue-400 text-sm font-semibold opacity-50 cursor-not-allowed">In Development</span>
               </div>
             </div>
           </div>
 
           <!-- Project 7 - Property Market Online -->
-          <div class="project-card group bg-slate-700 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 hover:scale-105 cursor-pointer hover:border-2 hover:border-brand" data-status="ongoing">
-            <div class="relative h-48 bg-gray-800 overflow-hidden">
+          <div class="project-card project-card--text-only group bg-slate-700 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 hover:scale-105 cursor-pointer hover:border-2 hover:border-brand" data-status="ongoing">
+            <div class="project-text-cover relative h-48 overflow-hidden"><span class="project-cover-label">In development</span>
               <div class="absolute top-4 right-4">
                 <span class="inline-block px-4 py-1 rounded-full text-xs font-bold bg-blue-500 text-white animate-pulse">
                   ⚡ ONGOING
@@ -349,7 +352,7 @@
                 <span class="px-3 py-1 bg-slate-600 text-slate-200 text-xs rounded-full">MongoDB</span>
               </div>
               <div class="flex gap-4">
-                <a href="https://github.com/RitaAkankunda/PropertyMarketOnline.git" target="_blank" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
+                <a href="https://github.com/RitaAkankunda/PropertyMarketOnline.git" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-pink-400 text-sm font-semibold transition-colors">Repository →</a>
                 <span class="text-blue-400 text-sm font-semibold opacity-50 cursor-not-allowed">In Development</span>
               </div>
             </div>
@@ -362,7 +365,7 @@
     <!-- About Section -->
     <section class="about py-20 bg-slate-900" id="about">
       <div class="container max-w-4xl mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="about-layout grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">About Me</h2>
             <p class="text-gray-300 text-lg mb-4 leading-relaxed">
@@ -392,7 +395,7 @@
           </div>
           <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-br from-brand/20 to-cyan-500/20 rounded-2xl blur-3xl"></div>
-            <div class="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
+            <div class="about-facts-card relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
               <div class="mb-6">
                 <h3 class="text-brand font-bold text-sm uppercase tracking-wider mb-4">Quick Facts</h3>
                 <div class="space-y-4">
@@ -427,9 +430,9 @@
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Latest Blog Posts</h2>
           <p class="text-gray-300 text-lg">Insights on web development, tech industry, and building solutions</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="blog-grid grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Blog Post 1 -->
-          <article class="bg-slate-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
+          <article class="blog-preview-card bg-slate-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
             <div class="h-40 bg-gradient-to-br from-brand to-pink-600 flex items-center justify-center">
               <span class="text-4xl">📖</span>
             </div>
@@ -445,7 +448,7 @@
             </div>
           </article>
           <!-- Blog Post 2 -->
-          <article class="bg-slate-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
+          <article class="blog-preview-card bg-slate-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
             <div class="h-40 bg-gradient-to-br from-purple-500 to-brand flex items-center justify-center">
               <span class="text-4xl">✨</span>
             </div>
@@ -461,7 +464,7 @@
             </div>
           </article>
           <!-- Blog Post 3 -->
-          <article class="bg-slate-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
+          <article class="blog-preview-card bg-slate-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group">
             <div class="h-40 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
               <span class="text-4xl">🚀</span>
             </div>
@@ -487,7 +490,7 @@
           <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">My Toolkit</h2>
           <p class="text-gray-300 text-lg">Technologies and tools I use to build amazing things</p>
         </div>
-        <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+        <div class="skills-grid flex flex-wrap justify-center gap-8 md:gap-12">
           <div class="flex flex-col items-center group cursor-pointer">
             <div class="w-20 h-20 bg-slate-700 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
               <img src="assets/images/skills/js.webp" alt="JavaScript" class="w-12 h-12 skill-icon" loading="lazy" />
@@ -529,13 +532,13 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact py-20 bg-slate-800" id="contact">
+    <section class="contact contact-refresh py-20 bg-slate-800" id="contact">
       <div class="container max-w-4xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-12">Get In Touch</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="contact-layout grid grid-cols-1 md:grid-cols-2 gap-12">
           <!-- Contact Info -->
-          <div class="space-y-6">
-            <div class="flex items-center gap-4 bg-slate-800 p-6 rounded-lg hover:shadow-lg transition-all">
+          <div class="contact-intro space-y-6">
+            <div class="contact-availability flex items-center gap-4 bg-slate-800 p-6 rounded-lg hover:shadow-lg transition-all">
               <span class="text-2xl">✨</span>
               <div>
                 <h3 class="font-bold text-white text-lg">Available for Work</h3>
@@ -551,8 +554,9 @@
             <p class="text-2xl font-bold text-brand">— Rita</p>
           </div>
           <!-- Contact Form -->
-          <div class="bg-slate-800 p-8 rounded-xl shadow-lg">
-            <form action="#" class="contact-form space-y-4" netlify>
+          <div class="contact-form-card bg-slate-800 p-8 rounded-xl shadow-lg">
+            <form name="portfolio-contact" method="POST" data-netlify="true" action="/" class="contact-form space-y-4">
+              <input type="hidden" name="form-name" value="portfolio-contact" />
               <div class="form-field">
                 <label for="name" class="block text-white font-semibold mb-2">Your Name</label>
                 <input type="text" name="name" id="name" required class="w-full px-4 py-2 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-brand focus:outline-none transition-colors placeholder-gray-400" />
@@ -575,14 +579,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-8 border-t border-slate-700">
+    <footer class="site-footer bg-slate-900 text-white py-8 border-t border-slate-700">
       <div class="container max-w-6xl mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-          <div class="flex gap-6">
-            <a title="GitHub" aria-label="GitHub profile" href="https://github.com/RitaAkankunda" target="_blank" class="p-3 bg-slate-800 rounded-full hover:bg-brand hover:scale-110 transition-all duration-300">
+        <div class="site-footer-inner flex flex-col md:flex-row items-center justify-center gap-6">
+          <div class="footer-socials flex gap-6">
+            <a title="GitHub" aria-label="GitHub profile" href="https://github.com/RitaAkankunda" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-800 rounded-full hover:bg-brand hover:scale-110 transition-all duration-300">
               <img src="assets/images/social-links/github.svg" alt="GitHub" class="w-6 h-6" />
             </a>
-            <a title="LinkedIn" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/rita-akankunda-733563350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="p-3 bg-slate-800 rounded-full hover:bg-blue-600 hover:scale-110 transition-all duration-300">
+            <a title="LinkedIn" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/rita-akankunda-733563350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="p-3 bg-slate-800 rounded-full hover:bg-blue-600 hover:scale-110 transition-all duration-300">
               <img src="assets/images/social-links/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
             </a>
             <a title="Email" aria-label="Email Rita" href="mailto:akankundarita04@gmail.com" class="p-3 bg-slate-800 rounded-full hover:bg-red-600 hover:scale-110 transition-all duration-300">
